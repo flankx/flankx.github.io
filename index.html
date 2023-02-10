@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app">Loading...</div>
+  <div id="app" >Loading...</div>
   <script>
     window.$docsify = {
       name: '文档中心',
@@ -17,7 +17,7 @@
       // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
       loadSidebar: true,
       // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
-      loadNavbar: true,
+      // loadNavbar: true,
       // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
       coverpage: true,
       // 最大支持渲染的标题层级
@@ -26,6 +26,21 @@
       subMaxLevel: 4,
       // 小屏设备下合并导航栏到侧边栏
       mergeNavbar: true,
+      // 完全隐藏侧边栏，侧边栏的任何内容都不会被渲染
+      hideSidebar: false,
+      // 全局搜索插件
+      search: {
+        maxAge: 86400000,// 过期时间，单位毫秒，默认一天
+        paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
+        // 支持本地化
+        placeholder: '搜索',
+        // 支持本地化
+        noData: '没有找到结果',
+        // 搜索标题的最大层级, 1 - 6
+        depth: 3,
+        hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+      },
+      // 字数统计插件
       count:{
         countable:true,
         fontsize:'0.9em',
@@ -35,35 +50,15 @@
     }
   </script>
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>  
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <!-- 字数统计 -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
   <!-- 搜索功能支持 -->
-  <script>
-    window.$docsify = {
-      // 搜索配置(url：https://docsify.js.org/#/zh-cn/plugins?id=%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2-search)
-      search: {
-        maxAge: 86400000,// 过期时间，单位毫秒，默认一天
-        paths: auto,// 注意：仅适用于 paths: 'auto' 模式
-        // 支持本地化
-        placeholder: {
-          '/zh-cn/': '搜索',
-          '/': 'Type to search'
-        },
-        // 支持本地化
-        noData: {
-          '/zh-cn/': '找不到结果',
-          '/': 'No Results'
-          },
-        // 搜索标题的最大层级, 1 - 6
-        depth: 3,
-        hideOtherSidebarContent: false // 是否隐藏其他侧边栏内容
-      }
-    }
-  </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-
+  <!-- emoji -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <!-- 图片缩放 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
 </body>
 </html>

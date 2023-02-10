@@ -9,6 +9,7 @@
 - 热爱生活
 
 [GitHub](https://github.com/flankx/flankx.github.io)
+[Gitee](https://gitee.com/bookman001/flankx.github.io)
 [Get Started](/README.md)
 
 <!-- 背景色 -->
