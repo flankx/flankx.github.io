@@ -1,4 +1,4 @@
-![logo](_media/logo.svg)
+![logo](_media/logo.jpg)
 
 <!-- # docsify <small>3.5</small> -->
 
@@ -10,3 +10,6 @@
 
 [GitHub](https://github.com/flankx/flankx.github.io)
 [Get Started](/README.md)
+
+<!-- 背景色 -->
+<!-- ![color](#f0f0f0) -->
