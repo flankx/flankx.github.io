@@ -22,7 +22,7 @@ public class ServletContextListenerDemo implements ServletContextListener {
 }
 ```
 
-### 2. <span id = "jump">静态代码块</span>
+### 2. 静态代码块
 ```Java
 @Slf4j
 @Component
@@ -40,7 +40,7 @@ public class TestDemo {
 }
 ```
 
-### 3. 注解 @PostConstruc  👆[静态代码块](#jump)
+### 3. 注解 @PostConstruct 【同上】
 
 
 ### 4. 实现 ServletContextAware 的 setServletContext 方法
