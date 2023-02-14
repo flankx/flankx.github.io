@@ -3,6 +3,6 @@
 * Spring
   * [Spring容器中Bean的生命周期](/Spring/Spring容器中Bean的生命周期.md)
   * [Spring启动时执行指定方法的几种方式](/Spring/Spring启动时执行指定方法的几种方式.md)
-* 网站相关
+* 前端
   * [https证书申请工具](/web/https证书申请工具.md)
   * [Nginx配置文件模版](/web/Nginx配置文件模版.md)
