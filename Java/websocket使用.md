@@ -1,4 +1,4 @@
-# Spring中使用Websocket
+# `Websocket`使用
 
 ## 方式1：原生注解
 
@@ -30,7 +30,7 @@ public class WebSocketConfig {
 }
 ````
 
-### 3. 提供连接路径
+### 3. 连接处理
 
 ````java
 @Slf4j
@@ -64,7 +64,7 @@ public class TestWSEndPoint {
 }
 ````
 
-## 方式2：使用 spring
+## 方式2：使用`Spring`封装
 
 ### 1. 引入`POM`依赖
 
@@ -75,6 +75,6 @@ public class TestWSEndPoint {
 </dependency>
 ````
 
-## 方式3：使用 TIO
+## 方式3：使用 `TIO`
 
-## 方式4：使用 STOMP
+## 方式4：使用 `STOMP`
