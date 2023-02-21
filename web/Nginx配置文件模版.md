@@ -1,3 +1,5 @@
+# nginx.conf 模版内容
+
 ````conf
 user www-data;          # 运行用户
 worker_processes auto;  # 启动进程,通常设置成和cpu的数量相等

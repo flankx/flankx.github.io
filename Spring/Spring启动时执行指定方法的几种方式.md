@@ -1,6 +1,9 @@
+# 启动时执行指定方法
+
 ## 一、实现方式
 
 ### 1. 实现 ServletContextListener 的 contextInitialized 方法
+
 ```Java
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -23,6 +26,7 @@ public class ServletContextListenerDemo implements ServletContextListener {
 ```
 
 ### 2. 静态代码块
+
 ```Java
 @Slf4j
 @Component
@@ -42,8 +46,8 @@ public class TestDemo {
 
 ### 3. 注解 @PostConstruct 【同上】
 
-
 ### 4. 实现 ServletContextAware 的 setServletContext 方法
+
 ```Java
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -67,6 +71,7 @@ public class ServletContextAwareDemo implements ServletContextAware {
 ```
 
 ### 5. 注解 @EventListener
+
 ```Java
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -85,6 +90,7 @@ public class EventListenerDemo {
 ```
 
 ### 6. 实现 ApplicationRunner 接口的 run 方法
+
 ```Java
 @Slf4j
 @Component
@@ -108,6 +114,7 @@ public class ApplicationRunnerDemo implements ApplicationRunner {
 ```
 
 ### 7. 实现 CommandLineRunner 接口的 run 方法
+
 ```Java
 @Slf4j
 @Component
@@ -120,6 +127,7 @@ public class CommandLineRunnerDemo implements CommandLineRunner {
 ```
 
 ## 二、执行顺序
+
 ```log
 22:03:25.688  INFO 21132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
 22:03:25.716  INFO 21132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]

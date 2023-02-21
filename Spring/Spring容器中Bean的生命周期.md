@@ -1,7 +1,11 @@
-## 一、Bean的生命周期
+# Bean的生命周期
+
+## 一、流程图
+
 ![image](../_media/image.png)
 
 ## 二、启动步骤
+
 + 1、Spring对bean进行实例化；
 + 2、Spring 将值和 bean 的引用注入到 bean 对应的属性中；
 + 3、如果 bean 实现了 BeanNameAware 接口，Spring 将 bean 的 ID 传递给 setBeanName()方法；
@@ -12,4 +16,3 @@
 + 8、如果 bean 实现了 BeanPostProcessor 接口，Spring 将调用它们的 postProcessAfter-Initialization() 方法；
 + 9、此时，bean 已经准备就绪，可以被应用程序使用了，它们将一直驻留在应用上下文中，直到该应用上下文被销毁；
 + 10、如果 bean 实现了 DisposableBean 接口，Spring 将调用它的 destroy() 接口方法。
-
