@@ -75,6 +75,63 @@ public class TestWSEndPoint {
 </dependency>
 ````
 
-## 方式3：使用 `TIO`
+### 2. 编写处理器`WebsocketHandler`
 
-## 方式4：使用 `STOMP`
+````java
+@Component
+@Slf4j
+public class WebsocketCustomHandler implements WebSocketHandler {
+ @Override
+ public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+  log.info("接收到新的连接" + session.getId());
+ }
+
+ @Override
+ public void handleMessage(WebSocketSession session, WebSocketMessage<?> message) throws Exception {
+  String text = "接收到消息：" + message.toString() + "session = " + session.getId();
+  log.info(text);
+  session.sendMessage(new TextMessage(text));
+  // session.sendMessage(new
+  // BinaryMessage(text.getBytes(StandardCharsets.UTF_8)));
+  // session.sendMessage(new PingMessage());
+  // session.sendMessage(new PongMessage());
+ }
+
+ @Override
+ public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
+  log.info("连接错误" + exception + "session =" + session.getId());
+ }
+
+ @Override
+ public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
+  log.info("关闭连接 = " + closeStatus.toString() + "session =" + session.getId());
+ }
+
+ @Override
+ public boolean supportsPartialMessages() {
+  // 支持分片
+  return false;
+ }
+}
+````
+
+### 3. 注册`Handler`
+
+````java
+@Configuration
+@EnableWebSocket
+public class SpringWebsocketCofig implements WebSocketConfigurer {
+
+ @Autowired
+ WebsocketCustomHandler websocketCustomHandler;
+
+ @Override
+ public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+  registry.addHandler(websocketCustomHandler, "/spring-ws").setAllowedOrigins("*");
+ }
+}
+````
+
+## 方式3：使用`STOMP`
+
+## 方式4：使用`Netty` 等其他方式
