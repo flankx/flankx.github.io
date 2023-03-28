@@ -3,10 +3,13 @@
 ## 1、启动`elasticsearch`并指定单节点模式
 
 ````bash
+docker network create elastic
+
 docker run -d --name elasticsearch \
   -p 9200:9200 \
+  --net elastic \
   -e "discovery.type=single-node" \
-  -e ES_JAVA_OPTS="-Xms256m -Xmx1024m" \
+  -e ES_JAVA_OPTS="-Xms1024m -Xmx1024m" \
   elasticsearch:8.5.0
 ````
 
@@ -14,7 +17,8 @@ docker run -d --name elasticsearch \
 
 ````bash
 docker run -d --name kibana \
-  --link elasticsearch:elasticsearch\
+  --net elastic \
+  --link elasticsearch:elasticsearch \
  -p 5601:5601 kibana:8.5.0
 ````
 
@@ -22,6 +26,16 @@ docker run -d --name kibana \
 
 ````bash
 curl -L -O <https://raw.githubusercontent.com/elastic/beats/8.5/deploy/docker/metricbeat.docker.yml>
+
+# 调整配置
+output.elasticsearch:
+  hosts: ["<es_url>"]
+  username: "elastic"
+  password: "<password>"
+  # If using Elasticsearch's default certificate
+  ssl.ca_trusted_fingerprint: "<es cert fingerprint>"
+setup.kibana:
+  host: "<kibana_url>"
 ````
 
 ## 4、启动`metricbeat`
@@ -29,6 +43,7 @@ curl -L -O <https://raw.githubusercontent.com/elastic/beats/8.5/deploy/docker/me
 ````bash
 docker run -d \
   --name=metricbeat \
+  --net elastic \
   --user=root \
   --volume="$(pwd)/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
   --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
@@ -42,12 +57,12 @@ docker run -d \
 
 ````bash
 docker exec -it metricbeat bash
+# 启用和配置 docker 模块
+./metricbeat modules enable docker
 
-metricbeat -e \
-  -E output.elasticsearch.hosts=["<elasticsearch Ip>:9200"] \
-  -E setup.kibana.host=<kibana Ip>:5601 \
-  -E output.elasticsearch.username=elastic \
-  -E output.elasticsearch.password=<password>
+# 加载kibana仪表盘
+./metricbeat setup
+./metricbeat -e
 ````
 
 ## 6、重启`metricbeat`并前往`kibana`查看数据
@@ -55,3 +70,19 @@ metricbeat -e \
 ````bash
 docker restart metricbeat
 ````
+
+## 遇到异常问题
+
+### 1、Kibana server is not ready yet
+
++ 解决方式：在 `kibana.yml` 配置 `kibana_system` 用户信息
+
+````bash
+elasticsearch.username: "kibana_system"
+elasticsearch.password: "{password}"
+````
+
+### 2、dashboard 没有加载成功；报错lock by path.data
+
++ 解决方式：在对应 `path.data` 下删除 `xxx.lock` 文件
+
