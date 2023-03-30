@@ -1,6 +1,7 @@
 * Java
   * [线程池的使用](/Java/线程池的使用.md)
-  * [导出文件及压缩](/Java/导出文件及压缩.md)
+  * [导出文件](/Java/导出文件.md)
+  * [导出文件压缩](/Java/导出文件压缩.md)
   * [Websocket使用](Java/websocket使用.md)
 * Spring
   * [Spring容器中Bean的生命周期](/Spring/Spring容器中Bean的生命周期.md)
