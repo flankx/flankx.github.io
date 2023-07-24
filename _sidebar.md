@@ -10,7 +10,7 @@
   * [Spring容器中Bean的生命周期](/Spring/spring-2.md)
   * [SpringBoot自动配置实现原理](/Spring/spring-3.md)
 * [Redis](/Redis/redis-1.md)
-* 前端
+* Web
   * [https证书申请工具](/web/acme-sh.md)
   * [Nginx配置文件模版](/web/Nginx-Template-1.md)
   * [Docker 监控](/web/DockerMonitor.md)
