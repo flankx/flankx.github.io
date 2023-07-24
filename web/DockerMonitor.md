@@ -85,4 +85,3 @@ elasticsearch.password: "{password}"
 ### 2、dashboard 没有加载成功；报错lock by path.data
 
 + 解决方式：在对应 `path.data` 下删除 `xxx.lock` 文件
-

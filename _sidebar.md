@@ -9,7 +9,7 @@
   * [Spring启动时执行指定方法的几种方式](/Spring/spring-1.md)
   * [Spring容器中Bean的生命周期](/Spring/spring-2.md)
   * [SpringBoot自动配置实现原理](/Spring/spring-3.md)
-* Spring
+* Redis
   * [Redis](/Redis/redis-1.md)
 * 前端
   * [https证书申请工具](/web/acme-sh.md)
