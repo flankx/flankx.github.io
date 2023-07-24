@@ -1,11 +1,4 @@
----
-title: synchronized & ReentrantLock 区别
-
-tags: [Java]
-authors: Flankx
-description: 锁的区别
-
----
+# 锁
 
 ## `synchronized` 与 `ReentrantLock` 区别
 

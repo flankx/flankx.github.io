@@ -1,12 +1,3 @@
----
-title: Java接口与抽象类的区别
-
-tags: [Java]
-authors: Flankx
-description:  接口与抽象类的区别
-
----
-
 # Java接口与抽象类的区别
 
 ## 相同点
