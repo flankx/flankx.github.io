@@ -1,5 +1,3 @@
-# Redis
-
 ## Redis数据结构
 
 + 5种基础数据结构
@@ -22,7 +20,9 @@
 4. `allkeys-lru`（least recently used）：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的 key（这个是最常用的）
 5. `allkeys-random`：从数据集（server.db[i].dict）中任意选择数据淘汰
 6. `no-eviction`：禁止驱逐数据，也就是说当内存不足以容纳新写入数据时，新写入操作会报错。这个应该没人使用吧！
+
 4.0 版本后增加以下两种:
+
 7. `volatile-lfu`（least frequently used）：从已设置过期时间的数据集（server.db[i].expires）中挑选最不经常使用的数据淘汰
 8. `allkeys-lfu`（least frequently used）：当内存不足以容纳新写入数据时，在键空间中，移除最不经常使用的 key
 
