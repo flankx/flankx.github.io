@@ -4,7 +4,7 @@
   * [导出文件压缩](/Java/export-compress.md)
   * [Websocket使用](Java/websocket-1.md)
   * [Java接口与抽象类的区别](/Java/Java-1.md)
-  * [synchronized & ReentrantLock 区别](/Java/lock-1.md)
+  * [锁相关](/Java/lock-1.md)
 * Spring
   * [Spring启动时执行指定方法的几种方式](/Spring/spring-1.md)
   * [Spring容器中Bean的生命周期](/Spring/spring-2.md)
