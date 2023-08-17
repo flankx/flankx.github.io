@@ -7,15 +7,15 @@
 
 ## 2、线程池：ThreadPoolExecutor
 
-|  线程池参数 | 类型  | 参数理解  |
-| ------------ | ------------ | ------------ |
-| corePoolSize  | int   |   核心线程数线程数定义了最小可以同时运行的线程数量 |
-| maximumPoolSize   | int  |  当队列中存放的任务达到队列容量的时候，当前可以同时运行的线程数量变为最大线程数。 |
-| workQueue  |  BlockingQueue`<Runnable>` |  当新任务来的时候会先判断当前运行的线程数量是否达到核心线程数，如果达到的话，新任务就会被存放在队列中。 |
-| keepAliveTime  | long | 当线程池中的线程数量大于 corePoolSize 的时候，如果这时没有新的任务提交，核心线程外的线程不会立即销毁，而是会等待，直到等待的时间超过了keepAliveTime才会被回收销毁。|
-|  unit | TimeUnit   |  keepAliveTime 参数的时间单位。 |
-|  threadFactory |  ThreadFactory |  executor 创建新线程的时候会用到。 |
-|  handler | RejectedExecutionHandler  | 饱和策略。 |
+| 线程池参数      | 类型                      | 参数理解                                                                                                                                                            |
+| --------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| corePoolSize    | int                       | 核心线程数线程数定义了最小可以同时运行的线程数量                                                                                                                    |
+| maximumPoolSize | int                       | 当队列中存放的任务达到队列容量的时候，当前可以同时运行的线程数量变为最大线程数。                                                                                    |
+| workQueue       | BlockingQueue`<Runnable>` | 当新任务来的时候会先判断当前运行的线程数量是否达到核心线程数，如果达到的话，新任务就会被存放在队列中。                                                              |
+| keepAliveTime   | long                      | 当线程池中的线程数量大于 corePoolSize 的时候，如果这时没有新的任务提交，核心线程外的线程不会立即销毁，而是会等待，直到等待的时间超过了keepAliveTime才会被回收销毁。 |
+| unit            | TimeUnit                  | keepAliveTime 参数的时间单位。                                                                                                                                      |
+| threadFactory   | ThreadFactory             | executor 创建新线程的时候会用到。                                                                                                                                   |
+| handler         | RejectedExecutionHandler  | 饱和策略。                                                                                                                                                          |
 
 ## 3、线程池大小的确定
 
