@@ -9,7 +9,9 @@
   * [Spring启动时执行指定方法的几种方式](/Spring/spring-1.md)
   * [Spring容器中Bean的生命周期](/Spring/spring-2.md)
   * [SpringBoot自动配置实现原理](/Spring/spring-3.md)
-* [Redis](/Redis/redis-1.md)
+* Database
+  * [Redis](/DataSource/redis-1.md)
+  * [多数据源](/DataSource/datasource-1.md)
 * Web
   * [https证书申请工具](/web/acme-sh.md)
   * [Nginx配置文件模版](/web/Nginx-Template-1.md)
