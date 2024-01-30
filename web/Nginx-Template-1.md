@@ -27,6 +27,10 @@ http {
     default_type application/octet-stream;  # 定义响应的默认 MIME 类型。可以使用 types 指令对 MIME 类型的文件扩展名进行映射。
     gzip on;                                # 启用gzip功能，对响应数据进行在线实时压缩，减少数据传输量。
 
+    # 添加的指令 更具自己的系统选择
+    # include ../conf.d/*.conf; # window版本
+    include ./conf.d/*.conf;  # linux版本
+
     server {
         listen 80;                              # 此server块监听的端口号。
         #listen [::]:80;                        # IPv6 地址在方括号中指定
