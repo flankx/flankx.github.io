@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>文档首页</title>
@@ -7,9 +8,12 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!--- 网站图标 -->
+  <link rel="shortcut icon" href="_media/favicon.ico">
 </head>
+
 <body>
-  <div id="app" >Loading...</div>
+  <div id="app">🏃‍🏃‍🏃‍💨加载中...</div>
   <script>
     window.$docsify = {
       name: '文档中心',
@@ -39,7 +43,7 @@
         // 搜索标题的最大层级, 1 - 6
         depth: 3,
         hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
-      },  
+      },
       // docsify-copy-code (defaults)
       copyCode: {
         buttonText: 'Copy to clipboard',
@@ -47,13 +51,12 @@
         successText: 'Copied',
       },
       // 字数统计插件
-      count:{
-        countable:true,
-        fontsize:'0.9em',
-        color:'rgb(90,90,90)',
-        language:'chinese'
+      count: {
+        countable: true,
+        fontsize: '0.9em',
+        color: 'rgb(90,90,90)',
+        language: 'chinese'
       }
-      
     }
   </script>
   <!-- Docsify v4 -->
@@ -68,6 +71,20 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <!-- Latest v2.x.x -->
   <script src="https://unpkg.com/docsify-copy-code@2"></script>
-
+  <!-- 回到顶部功能 -->
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.goup.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.goup({
+        trigger: 100,
+        bottomOffset: 52,
+        locationOffset: 25,
+        title: 'TOP',
+        titleAsText: true
+      });
+    });
+  </script>
 </body>
+
 </html>
