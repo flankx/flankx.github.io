@@ -1,4 +1,4 @@
-![logo](_media/logo.jpg)
+![logo](_media/github-mark-white.png)
 
 <!-- # docsify <small>3.5</small> -->
 
